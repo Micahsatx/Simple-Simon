@@ -1,28 +1,23 @@
-// buttons fade
-// (function(){
+(function(){
 
     $("#blue").click(function(){
-        $("#blue").fadeTo("fast", 0.15);
-        $("#blue").fadeTo("fast", 1);
-        console.log("blue")
+        $("#blue").fadeTo("fast", 0.1);
+        $("#blue").fadeTo("fast", 0.5);
     });
 
     $("#green").click(function(){
-        $("#green").fadeTo("fast", 0.15);
-        $("#green").fadeTo("fast", 1);
-        console.log("green")
+        $("#green").fadeTo("fast", 0.1);
+        $("#green").fadeTo("fast", 0.5);
     });
 
     $("#red").click(function(){
-        $("#red").fadeTo("fast", 0.15);
-        $("#red").fadeTo("fast", 1);
-        console.log("red")
+        $("#red").fadeTo("fast", 0.1);
+        $("#red").fadeTo("fast", 0.5);
     });
 
     $("#yellow").click(function(){
-        $("#yellow").fadeTo("fast", 0.15);
-        $("#yellow").fadeTo("fast", 1);
-        console.log("yellow")
+        $("#yellow").fadeTo("fast", 0.1);
+        $("#yellow").fadeTo("fast", 0.5);
     });
 
 
@@ -37,23 +32,18 @@
         var $keys = $('.color-button');
         var randomButtonLit = $keys[Math.floor(Math.random()*$keys.length)];
 
-        // which button was lit?
-        console.log(randomButtonLit);
-    
         // this is pushing the randomButtonLit onto the color sequence array
         colorSequence.push(randomButtonLit)
+        // this is for the cheaters to read the sequence
         console.log(colorSequence)
         // start the animate sequence...simons turn.
         animateSequence();
     };
 
-    // this function makes button light up/ fade out.  thats it.  calling this function 
-    // animateSequence();
     function lightUpSingleButton(button) {
         // use $button to fadeTo 0.4 then 1
-        $(button).fadeTo("slow", 0.2);
-        $(button).fadeTo("slow", 1);
-        // animateSequence();
+        $(button).fadeTo("fast", 0.1);
+        $(button).fadeTo("fast", 0.6);
     }
 
 
@@ -73,8 +63,21 @@
                 index = 0;
             }
         // here is the delay. 1.5 seconds
-        }, 1500);
+        }, 1000);
     }
+
+    function checkArraySequence(){
+                // Shows the level in the top corner
+                $("#stage").html("Level " + (index + 1));
+                // says if index is at 3+1 then run the swirly spiral
+                if(colorSequence.length == 3){
+                    $(".swirlyDoodle").show();
+                }
+                index = 0;
+                newRandomButton();
+    }
+
+
 
 
     //click listener for start button
@@ -83,30 +86,29 @@
     });
 
 
-
-
     // the part that checks to see if the button clicked is equal to the button that lit up.
     $(".color-button").click(function(event){
 
             if ( colorSequence[index] == this ){
                 console.log("correct");
                 index++;
+
             } else {
+                $(".failPanda").show();
                 // this failed function!
                 console.log("WRONG, WRONG, WRONG!")
                 index = 0;
             }
 
             if (index == colorSequence.length) {
-                index = 0;
-                console.log("This is the correct Sequence of buttons!")
-                newRandomButton();
-                // this success function
-                $("stage").html("level " + (index + 1));
+                checkArraySequence();
             }    
     });
 
+    // css swirl function
+    (function () {
+    }.call(this));
 
 
 
-// }());
+}());
