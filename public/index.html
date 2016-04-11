@@ -3,12 +3,17 @@
     <title>Simple Simon</title>
     <style type="text/css">
     </style>
+    <!-- bootstrap -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <!-- css page link -->
     <link rel="stylesheet" href="/css/simplesimon.css">
+    <!-- google fonts for customer font used in all html -->
     <link href='https://fonts.googleapis.com/css?family=Bangers' rel='stylesheet' type='text/css'>
 </head>
 <body>
+<!-- shows what stage the player is currently on -->
 <p id="stage">Level 1</p>
+<!-- fail gif that plays when player losses -->
 <img class="failPanda" src="/img/fail.gif" style="width: 100%; height: 100%;">
 <div>
     <div id="topRow">
@@ -21,10 +26,9 @@
     </div>
 </div>
 <div>
-
     <button class="start-button" id="idOfStart">Start</button>
 </div>
-
+<!-- the div's that create the swirlydoodle animation. -->
 <div class="swirlyDoodle holder">
     <div class="circle"></div>
     <div class="circle"></div>
@@ -44,11 +48,12 @@
     <div class="circle"></div>
 </div>
 
-
 <script>
     "use strict"
 </script>
+    <!-- jquery library link -->
     <script src="http://code.jquery.com/jquery-1.11.0.min.js"></script>
+    <!-- jquery external page link -->
     <script src="/js/simplesimon.js"></script>
 </body>
 </html>

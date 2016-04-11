@@ -2,22 +2,22 @@
 
     $("#blue").click(function(){
         $("#blue").fadeTo("fast", 0.1);
-        $("#blue").fadeTo("fast", 0.5);
+        $("#blue").fadeTo("fast", 0.65);
     });
 
     $("#green").click(function(){
         $("#green").fadeTo("fast", 0.1);
-        $("#green").fadeTo("fast", 0.5);
+        $("#green").fadeTo("fast", 0.65);
     });
 
     $("#red").click(function(){
         $("#red").fadeTo("fast", 0.1);
-        $("#red").fadeTo("fast", 0.5);
+        $("#red").fadeTo("fast", 0.65);
     });
 
     $("#yellow").click(function(){
         $("#yellow").fadeTo("fast", 0.1);
-        $("#yellow").fadeTo("fast", 0.5);
+        $("#yellow").fadeTo("fast", 0.65);
     });
 
 
@@ -93,22 +93,27 @@
                 console.log("correct");
                 index++;
 
+            // this is what runs when the sequence fails 
             } else {
                 $(".failPanda").show();
-                // this failed function!
-                console.log("WRONG, WRONG, WRONG!")
                 index = 0;
             }
-
+            // this is what runs when the sequence is correct.  triggers the swirlydoodle.
             if (index == colorSequence.length) {
                 checkArraySequence();
             }    
     });
 
-    // css swirl function
+    // css swirl function-
     (function () {
     }.call(this));
 
 
 
 }());
+
+
+// next level.  adding 3 buttons
+// make 3 buttons.  easy medium hard.  each button has a variable.   set up severl if else statements.
+// so if easy mode then if easymode dont set index back to zero, else run it normally for medium
+// if hardmode run swirly doodle function
